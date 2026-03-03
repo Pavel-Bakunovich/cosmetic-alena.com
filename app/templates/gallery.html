@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}Галерея - {{ site_name }}{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 0;">
+    <div class="container">
+        <h1 class="display-4 mb-2">Галерея</h1>
+        <p class="lead">Посмотрите преобразования красоты, которые мы создали</p>
+    </div>
+</section>
+
+<!-- Gallery Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 mb-2">Наша работа</h2>
+            <p class="lead text-muted">До и после преобразований и истории удовлетворения клиентов</p>
+        </div>
+
+        <div class="gallery-grid">
+            <!-- Gallery items will be displayed here -->
+            <div class="row">
+                {% for i in range(1, 13) %}
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <i class="fas fa-image fa-5x text-secondary"></i>
+                        </div>
+                        <div class="gallery-overlay">
+                            <a href="#" class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#imageModal">
+                                <i class="fas fa-search-plus"></i> Просмотр
+                            </a>
+                        </div>
+                        <div class="gallery-caption">
+                            <h6>Преобразование #{{ i }}</h6>
+                            {% if i % 3 == 0 %}
+                            <p class="text-muted small">Макияж и укладка волос</p>
+                            {% elif i % 3 == 1 %}
+                            <p class="text-muted small">Средство для лица</p>
+                            {% else %}
+                            <p class="text-muted small">Полный макияж</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Image Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Изображение из галереи</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center">
+                    <i class="fas fa-image fa-10x text-secondary opacity-50"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA Section -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="mb-4">Готовы к вашему преобразованию?</h2>
+        <p class="lead mb-4">Позвольте нашим экспертам помочь вам достичь целей красоты</p>
+        <a href="/book-appointment" class="btn btn-primary btn-lg">Забронируйте вашу сессию</a>
+    </div>
+</section>
+{% endblock %}

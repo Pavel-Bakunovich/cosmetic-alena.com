@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}Услуги - {{ site_name }}{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 0;">
+    <div class="container">
+        <h1 class="display-4 mb-2">Наши услуги</h1>
+        <p class="lead">Комплексные процедуры красоты и косметики для всех</p>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="btn-group mb-4" role="group">
+                    <button type="button" class="btn btn-outline-primary active" data-filter="all">Все услуги</button>
+                    {% for category in categories %}
+                    <button type="button" class="btn btn-outline-primary" data-filter="{{ category }}">{{ category }}</button>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        {% if services %}
+        <div class="row">
+            {% for service in services %}
+            <div class="col-md-6 col-lg-4 mb-4 service-item" data-category="{{ service.category or 'other' }}">
+                <div class="service-card h-100 shadow-lg">
+                    {% if service.image %}
+                    <img src="{{ service.image }}" alt="{{ service.name }}" class="service-image">
+                    {% else %}
+                    <div class="service-placeholder">
+                        <i class="fas fa-image fa-3x"></i>
+                    </div>
+                    {% endif %}
+                    <div class="service-content">
+                        <span class="badge bg-primary mb-2">{{ service.category or 'Услуга' }}</span>
+                        <h5 class="mb-2">{{ service.name }}</h5>
+                        <p class="text-muted mb-3">{{ service.description }}</p>
+                        <div class="service-details mb-3">
+                            {% if service.duration %}
+                            <span class="me-3">
+                                <i class="fas fa-clock"></i> {{ service.duration }} мин
+                            </span>
+                            {% endif %}
+                            {% if service.price %}
+                            <span>
+                                <i class="fas fa-dollar-sign"></i> ${{ "%.2f"|format(service.price) }}
+                            </span>
+                            {% endif %}
+                        </div>
+                        <a href="/book-appointment" class="btn btn-primary w-100">Забронировать</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="alert alert-info">
+            <i class="fas fa-info-circle"></i> Услуги скоро будут доступны!
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="mb-4">Не нашли то, что ищете?</h2>
+        <p class="lead mb-4">Свяжитесь с нами, чтобы обсудить пользовательские пакеты</p>
+        <a href="/contact" class="btn btn-primary btn-lg">Связаться с нами</a>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+$(document).ready(function() {
+    $('.btn-group button').click(function() {
+        const filter = $(this).data('filter');
+        
+        $('.btn-group button').removeClass('active');
+        $(this).addClass('active');
+        
+        if (filter === 'all') {
+            $('.service-item').fadeIn();
+        } else {
+            $('.service-item').fadeOut();
+            $('.service-item[data-category="' + filter + '"]').fadeIn();
+        }
+    });
+});
+</script>
+{% endblock %}

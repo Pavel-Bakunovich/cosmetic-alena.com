@@ -1,0 +1,243 @@
+{% extends "base.html" %}
+
+{% block title %}Забронировать встречу - {{ site_name }}{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 0;">
+    <div class="container">
+        <h1 class="display-4 mb-2">Забронировать встречу</h1>
+        <p class="lead">Запланируйте ваше лечение красоты уже сегодня</p>
+    </div>
+</section>
+
+<!-- Booking Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Booking Form -->
+            <div class="col-md-8 mb-5 mb-md-0">
+                <div class="form-box p-5 bg-light rounded shadow-sm">
+                    <h3 class="mb-4">Детали встречи</h3>
+                    <form id="bookingForm" class="booking-form">
+                        <!-- Personal Information -->
+                        <fieldset class="mb-5">
+                            <legend class="mb-3 h5">Личная информация</legend>
+                            
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Полное имя" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control form-control-lg" placeholder="Адрес электронной почты" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <input type="tel" class="form-control form-control-lg" placeholder="Номер телефона" required>
+                            </div>
+                        </fieldset>
+
+                        <!-- Service Selection -->
+                        <fieldset class="mb-5">
+                            <legend class="mb-3 h5">Выберите услугу</legend>
+                            
+                            <div class="mb-3">
+                                <select class="form-select form-select-lg">
+                                    <option>Выберите услугу...</option>
+                                    {% for service in services %}
+                                    <option value="{{ service.id }}">{{ service.name }} - ${{ "%.2f"|format(service.price) }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+
+                            <!-- Service Details -->
+                            <div id="serviceDetails" class="alert alert-info" style="display: none;">
+                                <p><strong>Продолжительность:</strong> <span id="serviceDuration">-</span></p>
+                                <p><strong>Цена:</strong> $<span id="servicePrice">-</span></p>
+                                <p><strong>Описание:</strong> <span id="serviceDescription">-</span></p>
+                            </div>
+                        </fieldset>
+
+                        <!-- Date & Time -->
+                        <fieldset class="mb-5">
+                            <legend class="mb-3 h5">Выберите дату и время</legend>
+                            
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <input type="date" class="form-control form-control-lg" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="time" class="form-control form-control-lg" required>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Additional Notes -->
+                        <fieldset class="mb-5">
+                            <legend class="mb-3 h5">Дополнительные заметки (опционально)</legend>
+                            
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="4" placeholder="Какие-либо специальные пожелания или заметки?"></textarea>
+                            </div>
+                        </fieldset>
+
+                        <!-- Submit Button -->
+                        <div class="d-grid gap-2 d-md-flex">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fas fa-calendar-check"></i> Подтвердить встречу
+                            </button>
+                            <a href="/services" class="btn btn-outline-secondary btn-lg">
+                                <i class="fas fa-arrow-left"></i> Вернуться к услугам
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Sidebar Information -->
+            <div class="col-md-4">
+                <!-- Appointment Summary -->
+                <div class="summary-box p-4 bg-light rounded shadow-sm mb-4">
+                    <h5 class="mb-4">Краткое резюме встречи</h5>
+                    
+                    <div class="summary-item mb-3">
+                        <strong>Услуга:</strong>
+                        <p id="summaryService" class="text-muted mb-0">Выберите услугу</p>
+                    </div>
+                    
+                    <div class="summary-item mb-3">
+                        <strong>Дата:</strong>
+                        <p id="summaryDate" class="text-muted mb-0">Не выбрано</p>
+                    </div>
+                    
+                    <div class="summary-item mb-3">
+                        <strong>Время:</strong>
+                        <p id="summaryTime" class="text-muted mb-0">Не выбрано</p>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <strong>Цена:</strong>
+                        <p id="summaryPrice" class="text-primary mb-0 h5">$0.00</p>
+                    </div>
+                    
+                    <hr>
+                    
+                    <p class="text-muted small">
+                        <i class="fas fa-info-circle"></i> 
+                        После бронирования вам будет отправлено письмо с подтверждением.
+                    </p>
+                </div>
+
+                <!-- Why Book With Us -->
+                <div class="info-box p-4 bg-light rounded">
+                    <h5 class="mb-4">Почему забронировать с нами?</h5>
+                    
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <strong>Простое бронирование</strong>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <strong>Мгновенное подтверждение</strong>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <strong>Профессиональная команда</strong>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <strong>Премиум-продукты</strong>
+                        </li>
+                        <li>
+                            <i class="fas fa-check text-success me-2"></i>
+                            <strong>100% гарантия</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Help Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 text-center mb-4 mb-md-0">
+                <i class="fas fa-question-circle fa-3x text-primary mb-3"></i>
+                <h5>Не можете найти то, что вам нужно?</h5>
+                <p class="text-muted">Свяжитесь с нами для индивидуальных встреч</p>
+                <a href="/contact" class="btn btn-sm btn-outline-primary">Свяжитесь с нами</a>
+            </div>
+            <div class="col-md-4 text-center mb-4 mb-md-0">
+                <i class="fas fa-phone fa-3x text-primary mb-3"></i>
+                <h5>Предпочитаете звонить?</h5>
+                <p class="text-muted">+1 (555) 123-4567</p>
+                <p class="small text-muted">Пн-Вс: 10:00 - 18:00</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <i class="fas fa-calendar fa-3x text-primary mb-3"></i>
+                <h5>Добро пожаловать без предварительной записи</h5>
+                <p class="text-muted">Доступно в зависимости от доступности</p>
+                <p class="small text-muted">Встреча не требуется</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Static services data
+const servicesData = {
+    {% for service in services %}
+    {{ service.id }}: {
+        name: '{{ service.name }}',
+        duration: {{ service.duration }},
+        price: {{ service.price }},
+        description: '{{ service.description }}'
+    }{{ "," if not loop.last }}
+    {% endfor %}
+};
+
+$(document).ready(function() {
+    // Update service details when selection changes
+    $('select').change(function() {
+        const serviceId = parseInt($(this).val());
+        if (serviceId && servicesData[serviceId]) {
+            const service = servicesData[serviceId];
+            $('#summaryService').text(service.name);
+            $('#serviceDuration').text(service.duration + ' минут');
+            $('#servicePrice').text(service.price.toFixed(2));
+            $('#serviceDescription').text(service.description);
+            $('#summaryPrice').text('$' + service.price.toFixed(2));
+            $('#serviceDetails').show();
+        }
+    });
+
+    // Update summary on date change
+    $('input[type="date"]').change(function() {
+        const date = new Date($(this).val());
+        $('#summaryDate').text(date.toLocaleDateString('ru-RU', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        }));
+    });
+
+    // Update summary on time change
+    $('input[type="time"]').change(function() {
+        $('#summaryTime').text($(this).val());
+    });
+
+    // Form submission
+    $('#bookingForm').on('submit', function(e) {
+        e.preventDefault();
+        alert('Спасибо за ваш интерес! Для бронирования позвоните нам по номеру +1 (555) 123-4567 или посетите нас лично.');
+    });
+});
+</script>
+{% endblock %}

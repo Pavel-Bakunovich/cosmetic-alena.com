@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+
+{% block title %}О нас - {{ site_name }}{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 0;">
+    <div class="container">
+        <h1 class="display-4 mb-2">О {{ site_name }}</h1>
+        <p class="lead">Наша история, миссия и обязательства перед красотой</p>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center mb-5">
+            <div class="col-md-6 mb-4 mb-md-0">
+                <h2 class="display-5 mb-4">Наша история</h2>
+                <p class="mb-3">
+                    {{ site_name }} основана в 2015 году с простым видением: предоставлять профессиональные, мирового класса услуги красоты и косметики всем, кто хочет чувствовать себя уверенно и красиво.
+                </p>
+                <p class="mb-3">
+                    То, что началось как небольшая студия красоты, превратилось в неизвестный косметический центр, обслуживающий тысячи счастливых клиентов каждый год. Основатель Алена Виктория собрала команду талантливых и сертифицированных специалистов по красоте, которые разделяют одну и ту же страсть к трансформации красоты.
+                </p>
+                <p>
+                    Сегодня мы гордимся тем, что известны вниманием к деталям, использованием премиум-продуктов и приверженностью удовлетворению клиентов. Каждого клиента мы лечим как семью, и их цели красоты - наша миссия.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <div class="about-image">
+                    <i class="fas fa-spa fa-10x text-primary opacity-20"></i>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-5">
+
+        <!-- Mission & Vision -->
+        <div class="row">
+            <div class="col-md-6 mb-4 mb-md-0">
+                <div class="mission-box">
+                    <i class="fas fa-bullseye fa-3x text-primary mb-3"></i>
+                    <h3 class="mb-3">Наша миссия</h3>
+                    <p>Расширить возможности людей, обеспечивая исключительные услуги красоты, которые улучшают естественную красоту и повышают уверенность. Мы считаем, что каждый заслуживает чувствовать себя красиво и сияющо.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mission-box">
+                    <i class="fas fa-telescope fa-3x text-primary mb-3"></i>
+                    <h3 class="mb-3">Но видение</h3>
+                    <p>Стать самым доверяемым и любимым местом красоты, известным своим совершенством, инновациями и подлинной заботой. Мы представляем себе мир, где услуги красоты доступны каждому.</p>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-5">
+
+        <!-- Values Section -->
+        <div class="text-center mb-5">
+            <h2 class="display-5 mb-5">Наши основные ценности</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 mb-4 text-center">
+                <div class="value-card">
+                    <i class="fas fa-star fa-3x text-primary mb-3"></i>
+                    <h5 class="mb-3">Совершенство</h5>
+                    <p class="text-muted">Мы поддерживаем наивысшие стандарты во всем, что мы делаем, от наших техник до обслуживания клиентов.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 text-center">
+                <div class="value-card">
+                    <i class="fas fa-heart fa-3x text-primary mb-3"></i>
+                    <h5 class="mb-3">Забота</h5>
+                    <p class="text-muted">Каждый клиент важен для нас. Мы относимся к каждому человеку с подлинной заботой и вниманием.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 text-center">
+                <div class="value-card">
+                    <i class="fas fa-lightbulb fa-3x text-primary mb-3"></i>
+                    <h5 class="mb-3">Инновация</h5>
+                    <p class="text-muted">Мы следим за последними тенденциями красоты, методами и продуктами в отрасли.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 text-center">
+                <div class="value-card">
+                    <i class="fas fa-handshake fa-3x text-primary mb-3"></i>
+                    <h5 class="mb-3">Честность</h5>
+                    <p class="text-muted">Мы честны, прозрачны и надежны во всех наших отношениях с клиентами.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 text-center">
+                <div class="value-card">
+                    <i class="fas fa-leaf fa-3x text-primary mb-3"></i>
+                    <h5 class="mb-3">Устойчивость</h5>
+                    <p class="text-muted">Мы привержены использованию экологичных продуктов и методов в нашем салоне.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 text-center">
+                <div class="value-card">
+                    <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                    <h5 class="mb-3">Сообщество</h5>
+                    <p class="text-muted">Мы верим в благотворительность для нашего сообщества и поддержку местных причин.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3 mb-4 mb-md-0">
+                <h3 class="display-5 text-primary">1000+</h3>
+                <p class="text-muted">Счастливые клиенты</p>
+            </div>
+            <div class="col-md-3 mb-4 mb-md-0">
+                <h3 class="display-5 text-primary">50+</h3>
+                <p class="text-muted">Услуги предлагаются</p>
+            </div>
+            <div class="col-md-3 mb-4 mb-md-0">
+                <h3 class="display-5 text-primary">6</h3>
+                <p class="text-muted">Профессионалы</p>
+            </div>
+            <div class="col-md-3">
+                <h3 class="display-5 text-primary">9+</h3>
+                <p class="text-muted">Лет обслуживания</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5">
+    <div class="container text-center">
+        <h2 class="mb-4">Присоединитесь к нашему сообществу</h2>
+        <p class="lead mb-4">Испытайте разницу {{ site_name }} уже сегодня</p>
+        <a href="/book-appointment" class="btn btn-primary btn-lg me-2">Забронировать встречу</a>
+        <a href="/contact" class="btn btn-outline-primary btn-lg">Свяжитесь с нами</a>
+    </div>
+</section>
+{% endblock %}
