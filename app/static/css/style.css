@@ -128,6 +128,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
     line-height: 1.2;
+    color: white;
 }
 
 .hero-section .lead {
@@ -146,8 +147,22 @@ h1, h2, h3, h4, h5, h6 {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-20px);
+        transform: translateY(-10px);
     }
+}
+
+/* in style.css */
+.blurry-edge {
+    /* soften the entire image if you want a general blur */
+    /* filter: blur(2px); */
+
+    /* feather the outer pixels – centre stays sharp */
+    -webkit-mask-image: radial-gradient(circle, 
+                                       rgba(0,0,0,1) 58%, 
+                                       rgba(0,0,0,0) 60%);
+    mask-image: radial-gradient(circle, 
+                               rgba(0,0,0,1) 58%, 
+                               rgba(0,0,0,0) 60%);
 }
 
 .btn-group-custom {

@@ -212,7 +212,7 @@ def server_error(error):
 def inject_config():
     """Inject site configuration into templates"""
     return {
-        'site_name': 'Косметика Алена',
+        'site_name': 'Косметик Алена',
         'site_tagline': 'Профессиональные услуги красоты и косметики',
         'year': datetime.utcnow().year,
         'services': SERVICES,
