@@ -144,10 +144,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-image {
-    animation: float 3s ease-in-out infinite;
     position: relative;
-    max-width: 100%;
-    min-height: 320px;
+    max-width: 80%;
+    min-height: 200px;
 }
 
 .hero-image img {
@@ -177,16 +176,14 @@ h1, h2, h3, h4, h5, h6 {
 
 /* in style.css */
 .blurry-edge {
-    /* soften the entire image if you want a general blur */
-    /* filter: blur(2px); */
-
     /* feather the outer pixels – centre stays sharp */
     -webkit-mask-image: radial-gradient(circle, 
-                                       rgba(0,0,0,1) 58%, 
-                                       rgba(0,0,0,0) 60%);
+                                       rgba(0,0,0,1) 0%, 
+                                       rgba(0,0,0,1) 100%);
     mask-image: radial-gradient(circle, 
-                               rgba(0,0,0,1) 58%, 
-                               rgba(0,0,0,0) 60%);
+                               rgba(0,0,0,1) 0%, 
+                               rgba(0,0,0,1) 100%);
+    border-radius: 50%;
 }
 
 .btn-group-custom {
@@ -696,24 +693,47 @@ h1, h2, h3, h4, h5, h6 {
         padding: 40px 0 !important;
     }
 
+    .hero-section .row {
+        flex-direction: column;
+    }
+
+    .hero-section .col-md-6 {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .hero-section .col-md-6:last-child {
+        margin-top: 2rem;
+    }
+
     .hero-section .lead {
         font-size: 0.95rem;
     }
 
     .hero-section .hero-image {
-        min-height: 220px;
+        min-height: 300px;
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
+        overflow: visible;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .hero-section .hero-image i.fa-crown {
+        display: none;
     }
 
     .hero-section .hero-image img {
-        position: relative;
-        top: 0;
-        left: 0;
-        transform: none;
-        margin: 1rem auto 0;
+        position: static !important;
+        transform: none !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        margin: 0 auto !important;
         max-width: 85%;
+        height: auto;
     }
 
     .service-card {
