@@ -390,16 +390,21 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
 }
 
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
 .social-links a {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     background: #f5f7fa;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 0.3rem;
     transition: var(--transition);
 }
 
