@@ -35,6 +35,11 @@ body {
     background-color: #fff;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
@@ -140,6 +145,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-image {
     animation: float 3s ease-in-out infinite;
+    position: relative;
+    max-width: 100%;
+    min-height: 320px;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 @keyframes float {
@@ -148,6 +162,16 @@ h1, h2, h3, h4, h5, h6 {
     }
     50% {
         transform: translateY(-10px);
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar-custom .navbar-toggler {
+        border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-custom .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(44,62,80,0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     }
 }
 
@@ -613,7 +637,8 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
     .hero-section {
-        min-height: 400px;
+        min-height: auto;
+        padding: 3rem 0;
     }
 
     .hero-section .display-4 {
@@ -622,6 +647,10 @@ h1, h2, h3, h4, h5, h6 {
 
     .hero-section .lead {
         font-size: 1rem;
+    }
+
+    .hero-section .hero-image {
+        min-height: 260px;
     }
 
     .btn-group-custom {
@@ -640,6 +669,22 @@ h1, h2, h3, h4, h5, h6 {
         padding: 0.5rem 0 !important;
     }
 
+    .navbar-collapse {
+        background: rgba(255, 255, 255, 0.98);
+        border-radius: 1rem;
+        padding: 1rem;
+    }
+
+    .navbar-nav {
+        gap: 0.5rem;
+    }
+
+    .navbar-nav .btn-book {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 1rem;
+    }
+
     .display-4, .display-5 {
         font-size: 2rem;
     }
@@ -653,6 +698,22 @@ h1, h2, h3, h4, h5, h6 {
 
     .hero-section .lead {
         font-size: 0.95rem;
+    }
+
+    .hero-section .hero-image {
+        min-height: 220px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-section .hero-image img {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        margin: 1rem auto 0;
+        max-width: 85%;
     }
 
     .service-card {
