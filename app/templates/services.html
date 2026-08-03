@@ -16,11 +16,22 @@
     <div class="container">
         <div class="row mb-5">
             <div class="col-12">
-                <div class="btn-group mb-4" role="group">
-                    <button type="button" class="btn btn-outline-primary active" data-filter="all">Все услуги</button>
-                    {% for category in categories %}
-                    <button type="button" class="btn btn-outline-primary" data-filter="{{ category }}">{{ category }}</button>
-                    {% endfor %}
+                <div class="services-filter-toolbar mb-4">
+                    <div class="btn-group w-100 d-none d-sm-flex" role="group">
+                        <button type="button" class="btn btn-outline-primary active" data-filter="all">Все услуги</button>
+                        {% for category in categories %}
+                        <button type="button" class="btn btn-outline-primary" data-filter="{{ category }}">{{ category }}</button>
+                        {% endfor %}
+                    </div>
+                    <div class="d-sm-none">
+                        <label for="serviceFilterMobile" class="form-label visually-hidden">Фильтр услуг</label>
+                        <select id="serviceFilterMobile" class="form-select" aria-label="Фильтр услуг">
+                            <option value="all">Все услуги</option>
+                            {% for category in categories %}
+                            <option value="{{ category }}">{{ category }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>
@@ -42,14 +53,14 @@
                         <h5 class="mb-2">{{ service.name }}</h5>
                         <p class="text-muted mb-3">{{ service.description }}</p>
                         <div class="service-details mb-3">
-                            {% if service.duration %}
-                            <span class="me-3">
-                                <i class="fas fa-clock"></i> {{ service.duration }} мин
+                                {% if service.duration %}
+                            <span class="d-inline-flex align-items-center text-muted mb-2 mb-sm-0">
+                                <i class="fas fa-clock me-2"></i> {{ service.duration }} мин
                             </span>
                             {% endif %}
                             {% if service.price %}
-                            <span>
-                                <i class="fas fa-dollar-sign"></i> ${{ "%.2f"|format(service.price) }}
+                            <span class="d-inline-flex align-items-center price-value">
+                                {{ "%.2f"|format(service.price) }} ƃ
                             </span>
                             {% endif %}
                         </div>
@@ -80,18 +91,28 @@
 {% block extra_js %}
 <script>
 $(document).ready(function() {
-    $('.btn-group button').click(function() {
-        const filter = $(this).data('filter');
-        
-        $('.btn-group button').removeClass('active');
-        $(this).addClass('active');
-        
+    const filterServices = function(filter) {
         if (filter === 'all') {
             $('.service-item').fadeIn();
         } else {
             $('.service-item').fadeOut();
             $('.service-item[data-category="' + filter + '"]').fadeIn();
         }
+    };
+
+    $('.btn-group button').click(function() {
+        const filter = $(this).data('filter');
+        $('.btn-group button').removeClass('active');
+        $(this).addClass('active');
+        $('#serviceFilterMobile').val(filter);
+        filterServices(filter);
+    });
+
+    $('#serviceFilterMobile').change(function() {
+        const filter = $(this).val();
+        $('.btn-group button').removeClass('active');
+        $('.btn-group button[data-filter="' + filter + '"]').addClass('active');
+        filterServices(filter);
     });
 });
 </script>

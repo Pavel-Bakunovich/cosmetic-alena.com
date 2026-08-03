@@ -663,18 +663,36 @@ h1, h2, h3, h4, h5, h6 {
         width: 100%;
     }
 
-    .btn-group {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0;
+    .services-filter-toolbar {
+        display: grid;
+        gap: 1rem;
     }
 
-    .btn-group .btn {
+    .services-filter-toolbar .btn-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+    }
+
+    .services-filter-toolbar .btn-group .btn {
         flex: 1 1 auto;
-        min-width: 100px;
-        font-size: 0.9rem;
-        padding: 0.5rem 0.75rem;
-        margin-right: -1px;
+        min-width: 110px;
+        font-size: 0.95rem;
+        padding: 0.65rem 0.9rem;
+        white-space: normal;
+    }
+
+    .services-filter-toolbar .form-select {
+        width: 100%;
+    }
+
+    .service-card {
+        min-height: 100%;
+    }
+
+    .service-image,
+    .service-placeholder {
+        height: 220px;
     }
 
     .pricing-card.featured {

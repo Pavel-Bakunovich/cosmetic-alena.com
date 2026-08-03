@@ -181,11 +181,6 @@ def contact():
     """Contact page"""
     return render_template('contact.html')
 
-@app.route('/pricing')
-def pricing():
-    """Pricing page"""
-    return render_template('pricing.html', services=SERVICES)
-
 @app.route('/team')
 def team():
     """Team page"""
