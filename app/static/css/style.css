@@ -365,29 +365,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
 }
 
-/* ============================================================================
-   Team Member Cards
-   ============================================================================ */
-
-.team-member-card {
-    background: white;
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    text-align: center;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    transition: var(--transition);
-    border: 1px solid #e9ecef;
-}
-
-.team-member-card:hover {
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-    transform: translateY(-5px);
-}
-
-.member-image {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1rem;
 }
 
 .social-links {
