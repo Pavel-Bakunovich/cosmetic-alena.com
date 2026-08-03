@@ -61,7 +61,7 @@
                         <h5 class="mb-2">{{ service.name }}</h5>
                         <p class="text-muted small mb-3">{{ service.description[:100] if service.description else 'Профессиональная услуга красоты' }}...</p>
                         <div class="d-flex justify-content-between align-items-center">
-                            <span class="price-tag">${{ "%.2f"|format(service.price) if service.price else 'Уточнить' }}</span>
+                            <span class="price-tag">{{ "%.2f"|format(service.price) if service.price else 'Уточнить' }} ƃ</span>
                             <a href="/book-appointment" class="btn btn-sm btn-primary">Забронировать</a>
                         </div>
                     </div>
