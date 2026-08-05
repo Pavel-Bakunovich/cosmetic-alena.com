@@ -10,35 +10,30 @@ $(document).ready(function() {
     // Newsletter Subscription
     // ========================================================================
     
+    let newsletterSubmitting = false;
+
     $('#newsletter-form').on('submit', function(e) {
-        e.preventDefault();
-        
-        const email = $(this).find('input[type="email"]').val();
-        
+        const emailInput = $('#newsletter-email');
+        const email = emailInput.val().trim();
+
         if (!email) {
-            showAlert('Please enter your email address', 'warning');
+            e.preventDefault();
+            showAlert('Пожалуйста, введите ваш email', 'warning');
             return;
         }
-        
-        $.ajax({
-            url: '/api/newsletter/subscribe',
-            type: 'POST',
-            contentType: 'application/json',
-            data: JSON.stringify({
-                email: email
-            }),
-            success: function(response) {
-                showAlert('Successfully subscribed to our newsletter!', 'success');
-                $('#newsletter-form')[0].reset();
-            },
-            error: function(xhr) {
-                let message = 'Failed to subscribe. Please try again.';
-                if (xhr.responseJSON && xhr.responseJSON.error) {
-                    message = xhr.responseJSON.error;
-                }
-                showAlert(message, 'danger');
-            }
-        });
+
+        newsletterSubmitting = true;
+        showAlert('Оформляем подписку... Пожалуйста, подождите.', 'info', 3000);
+    });
+
+    $('#newsletter-target').on('load', function() {
+        if (!newsletterSubmitting) {
+            return;
+        }
+
+        newsletterSubmitting = false;
+        showAlert('Спасибо! Вы подписаны!', 'success');
+        $('#newsletter-form')[0].reset();
     });
 
     // ========================================================================
@@ -284,8 +279,12 @@ $(document).ready(function() {
             </div>
         `;
         
-        // Insert at top of body
-        $('body').prepend(alertHTML);
+        const alertContainer = $('#alert-container');
+        if (alertContainer.length) {
+            alertContainer.prepend(alertHTML);
+        } else {
+            $('body').prepend(alertHTML);
+        }
         
         // Auto-dismiss
         if (duration > 0) {

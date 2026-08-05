@@ -30,6 +30,7 @@
     {% block extra_css %}{% endblock %}
 </head>
 <body>
+    <div id="alert-container" class="alert-container"></div>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light navbar-custom sticky-top">
         <div class="container">
@@ -99,14 +100,15 @@
                 </div>
                 <div class="col-md-5 mb-4 mb-md-0">
                     <h5 class="mb-3">Новости</h5>
-                    <form id="newsletter-form" class="mb-3">
+                    <form id="newsletter-form" class="mb-3" action="https://docs.google.com/forms/d/e/1FAIpQLSct5qy0U-ZhY3hVaJgK5vg7AJ5twBYBR7fzgoik2U3RWRkSEA/formResponse" method="POST" target="newsletter-target">
                         <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Ваш email" required>
+                            <input id="newsletter-email" name="entry.1022218288" type="email" class="form-control" placeholder="Ваш email" required>
                             <button class="btn btn-primary" type="submit">
                                 <i class="fas fa-envelope"></i>
                             </button>
                         </div>
                     </form>
+                    <iframe name="newsletter-target" id="newsletter-target" style="display:none;"></iframe>
                     <p class="text-muted small">Можете оставить свой email - будут сообщать вам о новых услугах, скидках и акциях. Обещаю не спамить!</p>
                 </div>
             </div>
