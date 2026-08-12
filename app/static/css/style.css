@@ -494,8 +494,102 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.9rem;
 }
 
-/* ============================================================================
-   Contact Form & Info
+/* ============================================================================   About / Brand Highlight Section
+   ============================================================================ */
+
+.section-tag {
+    display: inline-block;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    background: rgba(102, 126, 234, 0.08);
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.brands-section {
+    background: linear-gradient(180deg, #f9f7ff 0%, #ffffff 100%);
+}
+
+.brand-stack {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.brand-card {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(102, 126, 234, 0.12);
+    border-radius: 24px;
+    box-shadow: 0 18px 45px rgba(44, 62, 80, 0.08);
+    padding: 2rem;
+}
+
+.brand-card-secondary {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.04), rgba(255, 255, 255, 0.96));
+}
+
+.brand-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid rgba(44, 62, 80, 0.08);
+}
+
+.brand-name {
+    font-size: clamp(1.8rem, 3vw, 2.7rem);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #3d4cc4;
+    font-family: 'Playfair Display', serif;
+}
+
+.brand-country {
+    color: var(--light-text);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.brand-list {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: var(--dark-text);
+}
+
+.brand-list li {
+    margin-bottom: 0.7rem;
+    line-height: 1.7;
+}
+
+.product-visual {
+    position: relative;
+    padding: 1rem;
+    border-radius: 30px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.12), rgba(118, 75, 162, 0.08));
+    box-shadow: 0 25px 60px rgba(44, 62, 80, 0.12);
+}
+
+.product-image {
+    display: block;
+    width: 100%;
+    min-height: 520px;
+    object-fit: cover;
+    border-radius: 24px;
+    border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+@media (max-width: 991.98px) {
+    .product-image {
+        min-height: 360px;
+    }
+}
+
+/* ==========================================================================   Contact Form & Info
    ============================================================================ */
 
 .form-box {
