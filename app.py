@@ -28,7 +28,8 @@ SERVICES = [
         'description': 'Попробвать БМС в первый раз.',
         'price': 40.00,
         'duration': 25,
-        'category': 'БМС'
+        'category': 'БМС',
+        'image': '/static/services/bms.jpeg'
     },
     {
         'id': 2,
@@ -36,7 +37,8 @@ SERVICES = [
         'description': 'Одна процедура БМС.',
         'price': 65.00,
         'duration': 50,
-        'category': 'БМС'
+        'category': 'БМС',
+        'image': '/static/services/bms.jpeg'
     },
     {
         'id': 3,
@@ -44,7 +46,8 @@ SERVICES = [
         'description': '10 сеансов. Самый выгодный вариант для достижения максимального эффекта от БМС.',
         'price': 600.00,
         'duration': 500,
-        'category': 'БМС'
+        'category': 'БМС',
+        'image': '/static/services/bms.jpeg'
     },
     {
         'id': 4,
@@ -52,7 +55,8 @@ SERVICES = [
         'description': 'Чистка лица с использованием ультразвуковых технологий для удаления загрязнений и улучшения текстуры кожи.',
         'price': 70.00,
         'duration': 60,
-        'category': 'Чистка'
+        'category': 'Чистка',
+        'image': '/static/services/chistka.jpg'
     },
     {
         'id': 5,
@@ -60,7 +64,8 @@ SERVICES = [
         'description': 'Чистка лица с использованием механических методов для удаления загрязнений и улучшения текстуры кожи.',
         'price': 90.00,
         'duration': 60,
-        'category': 'Чистка'
+        'category': 'Чистка',
+        'image': '/static/services/chistka.jpg'
     },
     {
         'id': 6,
@@ -68,7 +73,8 @@ SERVICES = [
         'description': 'Чистка лица с использованием комбинированных методов для удаления загрязнений и улучшения текстуры кожи.',
         'price': 100.00,
         'duration': 60,
-        'category': 'Чистка'
+        'category': 'Чистка',
+        'image': '/static/services/chistka.jpg'
     },
     {
         'id': 7,
@@ -76,7 +82,8 @@ SERVICES = [
         'description': 'Чистка лица с использованием Super методов для удаления загрязнений и улучшения текстуры кожи.',
         'price': 120.00,
         'duration': 60,
-        'category': 'Чистка'
+        'category': 'Чистка',
+        'image': '/static/services/chistka.jpg'
     },
     {
         'id': 8,
@@ -84,7 +91,8 @@ SERVICES = [
         'description': 'Чистка зоны декольте с использованием комбинированных методов для удаления загрязнений и улучшения текстуры кожи.',
         'price': 80.00,
         'duration': 60,
-        'category': 'Чистка'
+        'category': 'Чистка',
+        'image': '/static/services/chistka.jpg'
     },
     {
         'id': 9,
@@ -92,7 +100,8 @@ SERVICES = [
         'description': 'Чистка верхней части спины с использованием ультразвуковых технологий для удаления загрязнений и улучшения текстуры кожи.',
         'price': 85.00,
         'duration': 60,
-        'category': 'Чистка'
+        'category': 'Чистка',
+        'image': '/static/services/chistka.jpg'
     },
     {
         'id': 10,
@@ -100,7 +109,8 @@ SERVICES = [
         'description': 'Чистка всей спины с использованием ультразвуковых технологий для удаления загрязнений и улучшения текстуры кожи.',
         'price': 100.00,
         'duration': 60,
-        'category': 'Чистка'
+        'category': 'Чистка',
+        'image': '/static/services/chistka.jpg'
     },
     {
         'id': 11,
@@ -108,7 +118,8 @@ SERVICES = [
         'description': 'Альгинатная маска для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.',
         'price': 45.00,
         'duration': 60,
-        'category': 'Маски'
+        'category': 'Маски',
+        'image': '/static/services/maska.jpg.webp'
     },
     {
         'id': 12,
@@ -116,7 +127,8 @@ SERVICES = [
         'description': 'Очищающая маска для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.',
         'price': 30.00,
         'duration': 60,
-        'category': 'Маски'
+        'category': 'Маски',
+        'image': '/static/services/maska.jpg.webp'
     },
     {
         'id': 13,
@@ -124,7 +136,8 @@ SERVICES = [
         'description': 'Увлажняющая маска для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.',
         'price': 30.00,
         'duration': 60,
-        'category': 'Маски'
+        'category': 'Маски',
+        'image': '/static/services/maska.jpg.webp'
     },
     {
         'id': 14,
@@ -132,7 +145,8 @@ SERVICES = [
         'description': 'Лифтинговая маска для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.',
         'price': 35.00,
         'duration': 60,
-        'category': 'Маски'
+        'category': 'Маски',
+        'image': '/static/services/maska.jpg.webp'
     },
     {
         'id': 15,
@@ -140,7 +154,8 @@ SERVICES = [
         'description': 'Осветляющая маска для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.',
         'price': 35.00,
         'duration': 60,
-        'category': 'Маски'
+        'category': 'Маски',
+        'image': '/static/services/maska.jpg.webp'
     },
     {
         'id': 16,
@@ -148,7 +163,8 @@ SERVICES = [
         'description': 'Мультимаскинг маска для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.',
         'price': 40.00,
         'duration': 60,
-        'category': 'Маски'
+        'category': 'Маски',
+        'image': '/static/services/maska.jpg.webp'
     },
     {
         'id': 17,
@@ -156,7 +172,8 @@ SERVICES = [
         'description': 'Коллагеновый лист для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.',
         'price': 65.00,
         'duration': 60,
-        'category': 'Маски'
+        'category': 'Маски',
+        'image': '/static/services/maska.jpg.webp'
     },
     {
         'id': 18,
@@ -164,7 +181,8 @@ SERVICES = [
         'description': 'Нейромаска Gaba Lift для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.',
         'price': 60.00,
         'duration': 60,
-        'category': 'Маски'
+        'category': 'Маски',
+        'image': '/static/services/maska.jpg.webp'
     },
     {
         'id': 19,
@@ -172,7 +190,8 @@ SERVICES = [
         'description': 'Моделирующий массаж лица и рук с использованием специальных техник для улучшения контуров лица и рук.',
         'price': 65.00,
         'duration': 60,
-        'category': 'Массаж'
+        'category': 'Массаж',
+        'image': '/static/services/massage.jpg'
     },
     {
         'id': 20,
@@ -180,7 +199,8 @@ SERVICES = [
         'description': 'Пластический массаж лица и рук с использованием специальных техник для улучшения контуров лица и рук.',
         'price': 60.00,
         'duration': 60,
-        'category': 'Массаж'
+        'category': 'Массаж',
+        'image': '/static/services/massage.jpg'
     },
     {
         'id': 21,
@@ -188,7 +208,8 @@ SERVICES = [
         'description': 'Массаж лица и рук по методике Жаке с использованием специальных техник для улучшения контуров лица и рук.',
         'price': 45.00,
         'duration': 60,
-        'category': 'Массаж'
+        'category': 'Массаж',
+        'image': '/static/services/massage.jpg'
     },
     {
         'id': 22,
@@ -196,7 +217,8 @@ SERVICES = [
         'description': 'Массаж лица и рук с использованием сывороток и аппаратных методов для улучшения контуров лица и рук.',
         'price': 60.00,
         'duration': 60,
-        'category': 'Массаж'
+        'category': 'Массаж',
+        'image': '/static/services/massage.jpg'
     },
     {
         'id': 23,
@@ -204,7 +226,8 @@ SERVICES = [
         'description': 'Массаж области вокруг глаз с использованием аппаратных методов для улучшения контуров лица и рук.',
         'price': 25.00,
         'duration': 60,
-        'category': 'Массаж'
+        'category': 'Массаж',
+        'image': '/static/services/massage.jpg'
     },
     {
         'id': 24,
@@ -212,7 +235,8 @@ SERVICES = [
         'description': 'Массаж кистей рук с использованием скрабирования для улучшения контуров лица и рук.',
         'price': 35.00,
         'duration': 60,
-        'category': 'Массаж'
+        'category': 'Массаж',
+        'image': '/static/services/massage.jpg'
     },
     {
         'id': 25,
@@ -220,7 +244,8 @@ SERVICES = [
         'description': 'Водородный пилинг для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.',
         'price': 90.00,
         'duration': 60,
-        'category': 'Пиллинги'
+        'category': 'Пиллинги',
+        'image': '/static/services/pealing.jpg'
     },
     {
         'id': 26,
@@ -228,7 +253,8 @@ SERVICES = [
         'description': 'Кислородный пилинг для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.',
         'price': 90.00,
         'duration': 60,
-        'category': 'Пиллинги'
+        'category': 'Пиллинги',
+        'image': '/static/services/pealing.jpg'
     },
     {
         'id': 27,
@@ -236,7 +262,8 @@ SERVICES = [
         'description': 'Миндально-феруловый пилинг с лактобионовой кислотой для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.',
         'price': 80.00,
         'duration': 60,
-        'category': 'Пиллинги'
+        'category': 'Пиллинги',
+        'image': '/static/services/pealing.jpg'
     },
     {
         'id': 28,
@@ -244,7 +271,8 @@ SERVICES = [
         'description': 'Азелаиновый пилинг для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.',
         'price': 90.00,
         'duration': 60,
-        'category': 'Пиллинги'
+        'category': 'Пиллинги',
+        'image': '/static/services/pealing.jpg'
     },
     {
         'id': 29,
@@ -252,7 +280,8 @@ SERVICES = [
         'description': 'Нейропилинг GABA&NANA для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.',
         'price': 100.00,
         'duration': 60,
-        'category': 'Пиллинги'
+        'category': 'Пиллинги',
+        'image': '/static/services/pealing.jpg'
     },
     {
         'id': 30,
@@ -260,7 +289,8 @@ SERVICES = [
         'description': 'Лифтинговый комплекс для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.',
         'price': 90.00,
         'duration': 60,
-        'category': 'Комплексы'
+        'category': 'Комплексы',
+        'image': '/static/services/compleks.webp'
     },
     {
         'id': 31,
@@ -268,7 +298,8 @@ SERVICES = [
         'description': 'Лифтинговый тонус для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.',
         'price': 120.00,
         'duration': 60,
-        'category': 'Комплексы'
+        'category': 'Комплексы',
+        'image': '/static/services/compleks.webp'
     },
     {
         'id': 32,
@@ -276,7 +307,8 @@ SERVICES = [
         'description': 'Увлажняющий комплекс для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.',
         'price': 80.00,
         'duration': 60,
-        'category': 'Комплексы'
+        'category': 'Комплексы',
+        'image': '/static/services/compleks.webp'
     },
     {
         'id': 33,
@@ -284,7 +316,8 @@ SERVICES = [
         'description': 'Осветляющий комплекс для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.',
         'price': 60.00,
         'duration': 60,
-        'category': 'Комплексы'
+        'category': 'Комплексы',
+        'image': '/static/services/compleks.webp'
     },
     {
         'id': 34,
@@ -292,7 +325,8 @@ SERVICES = [
         'description': 'Противопигментный Lux для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.',
         'price': 110.00,
         'duration': 60,
-        'category': 'Комплексы'
+        'category': 'Комплексы',
+        'image': '/static/services/compleks.webp'
     },
     {
         'id': 35,
@@ -300,7 +334,8 @@ SERVICES = [
         'description': 'Антиоксидантный комплекс для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.',
         'price': 60.00,
         'duration': 60,
-        'category': 'Комплексы'
+        'category': 'Комплексы',
+        'image': '/static/services/compleks.webp'
     },
     {
         'id': 36,
@@ -308,7 +343,8 @@ SERVICES = [
         'description': 'Противокуперозный комплекс для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.',
         'price': 60.00,
         'duration': 60,
-        'category': 'Комплексы'
+        'category': 'Комплексы',
+        'image': '/static/services/compleks.webp'
     },
     {
         'id': 37,
@@ -316,7 +352,8 @@ SERVICES = [
         'description': 'Периорбитальный комплекс для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.',
         'price': 30.00,
         'duration': 60,
-        'category': 'Комплексы'
+        'category': 'Комплексы',
+        'image': '/static/services/compleks.webp'
     },
     {
         'id': 38,
@@ -324,7 +361,8 @@ SERVICES = [
         'description': 'Комплекс \"Всё и сразу\" для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.',
         'price': 200.00,
         'duration': 60,
-        'category': 'Комплексы'
+        'category': 'Комплексы',
+        'image': '/static/services/compleks.webp'
     },
     {
         'id': 39,
@@ -332,7 +370,8 @@ SERVICES = [
         'description': 'Комплекс Nana&Gaba (мегалифтинг) для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.   ',
         'price': 150.00,
         'duration': 60,
-        'category': 'Комплексы'
+        'category': 'Комплексы',
+        'image': '/static/services/compleks.webp'
     },
     {
         'id': 41,
@@ -340,7 +379,8 @@ SERVICES = [
         'description': 'Дарсонваль для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.',
         'price': 15.00,
         'duration': 60,
-        'category': 'Дарсонваль'
+        'category': 'Дарсонваль',
+        'image': '/static/services/darsonval.jpeg'
     },
     {
         'id': 42,
@@ -348,7 +388,8 @@ SERVICES = [
         'description': 'Дарсонваль для волос с увлажняющим и питательным эффектом. Подходит для всех типов кожи.',
         'price': 25.00,
         'duration': 60,
-        'category': 'Дарсонваль'
+        'category': 'Дарсонваль',
+        'image': '/static/services/darsonval.jpeg'
     },
     {
         'id': 43,
@@ -356,7 +397,8 @@ SERVICES = [
         'description': 'Дарсонваль для спины с увлажняющим и питательным эффектом. Подходит для всех типов кожи.',
         'price': 25.00,
         'duration': 60,
-        'category': 'Дарсонваль'
+        'category': 'Дарсонваль',
+        'image': '/static/services/darsonval.jpeg'
     }
 ]
 
