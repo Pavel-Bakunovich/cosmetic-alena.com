@@ -360,6 +360,45 @@ SERVICES = [
     }
 ]
 
+CERTIFICATES = [
+    {
+        'heading': 'Сертификаты государственного образца',
+        'intro': 'Следующие два сертификата - это сертификаты государственного образца 4 и 5 разряда. Это официальное подтверждение моего косметологического образования.',
+        'items': [
+            {
+                'title': 'Свидетельство косметолога-эстетиста 5-ого разряда государственного образца',
+                'image': 'certificates/IMG_5181.webp'
+            },
+            {
+                'title': 'Свидетельство косметолога-эстетиста 4-ого разряда государственного образца',
+                'image': 'certificates/Scanned_Document_3.webp'
+            }
+        ]
+    },
+    {
+        'heading': 'Другие сертификаты',
+        'intro': 'Все остальные сертификаты ниже на этой странице - это сертификаты, полученные от различных косметологических школ, где я проходила специализированное обучение. Я люблю учиться и совершенствовать свои навыки!',
+        'items': [
+            {'title': 'Сертификат House of Beauty - Косметик 4 разряда', 'image': 'certificates/Scanned_Document_6.jpeg'},
+            {'title': 'Сертификат по БМС', 'image': 'certificates/BMS_certificate.jpg'},
+            {'title': 'Сертификат от Arkana', 'image': 'certificates/Scanned_Document_3_L.png'},
+            {'title': 'Сертификат от Arkana - Пилинги', 'image': 'certificates/Scanned_Document_6_arkana.jpeg'},
+            {'title': 'Сертификат от Premium', 'image': 'certificates/_Premium_Professiona.jpeg'},
+            {'title': 'Сертификат от школы массажа "Кинезио" - Эстетическое тейпирование лица', 'image': 'certificates/Scanned_Document_9.jpeg'},
+            {'title': 'Сертификат от Ирины МиссМо - Тейпология', 'image': 'certificates/Scanned_Document_11.jpeg'},
+            {'title': 'Сертификат House of Beauty - Ламинирование ресниц', 'image': 'certificates/Scanned_Document_7.jpeg'},
+            {'title': 'Сертификат House of Beauty - Искусство архитектуры окрашивания бровей', 'image': 'certificates/Scanned_Document_5.jpeg'},
+            {'title': 'Сертификат House of Beauty - Депиляция сахарной пастой', 'image': 'certificates/Scanned_Document_8.jpeg'},
+            {'title': 'Сертификат House of Beauty - Базовый курс по восковой депиляции', 'image': 'certificates/Scanned_Document_4.jpeg'},
+            {'title': 'Сертификат Arkana - Пилинги', 'image': 'certificates/Scanned_Document_5_L.jpeg'},
+            {'title': 'Сертификат от Amway', 'image': 'certificates/Scanned_Document_10.jpeg'},
+            {'title': 'Сертификат от Lamar. Изучила возможности их косметики.', 'image': 'certificates/IMG_5178.jpeg'},
+            {'title': 'Сертификат от по Фракционной мезотерапии от Галины Бабенко.', 'image': 'certificates/IMG_5180.jpeg'},
+            {'title': 'Свидетельство массажиста. Получила его в далеком 2007 году. Можно сказать, это был мой первый шаг в профессию :)', 'image': 'certificates/Scanned_Document_4_L.png'}
+        ]
+    }
+]
+
 # Routes
 @app.route('/')
 def index():
@@ -377,6 +416,11 @@ def services():
 def about():
     """About page"""
     return render_template('about.html')
+
+@app.route('/certificates')
+def certificates():
+    """Certificates page"""
+    return render_template('certificates.html', certificates=CERTIFICATES)
 
 @app.route('/gallery')
 def gallery():

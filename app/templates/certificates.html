@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Мои сертификаты - {{ site_name }}{% endblock %}
+
+{% block content %}
+<section class="page-header" style="background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); color: white; padding: 60px 0;">
+    <div class="container">
+        <h1 class="display-4 mb-2" style="color: white;">Мои сертификаты</h1>
+        <p class="lead mb-0">Сертификаты государственного образца и профессиональное обучение</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        {% for group in certificates %}
+            <div class="mb-5">
+                <h2 class="mb-3">{{ group.heading }}</h2>
+                <p class="lead mb-4">{{ group.intro }}</p>
+
+                <div class="row g-4">
+                    {% for item in group['items'] %}
+                        <div class="col-lg-6">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <img
+                                    src="{{ url_for('static', filename=item.image) }}"
+                                    class="card-img-top"
+                                    alt="{{ item.title }}"
+                                    style="height: 520px; object-fit: contain; background: #f8f9fa; padding: 1rem;"
+                                >
+                                <div class="card-body">
+                                    <p class="card-text mb-0">{{ item.title }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
