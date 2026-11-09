@@ -63,11 +63,6 @@ def contact():
     """Contact page"""
     return render_template('contact.html')
 
-@app.route('/book-appointment')
-def book_appointment():
-    """Book appointment page"""
-    return render_template('book-appointment.html', services=SERVICES)
-
 # Error handlers
 @app.errorhandler(404)
 def not_found(error):

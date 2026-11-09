@@ -129,44 +129,6 @@ $(document).ready(function() {
     });
 
     // ========================================================================
-    // Appointment Booking
-    // ========================================================================
-    
-    $('#bookingForm').on('submit', function(e) {
-        e.preventDefault();
-        
-        const formData = {
-            name: $('#name').val(),
-            email: $('#email').val(),
-            phone: $('#phone').val(),
-            service_id: $('#service').val(),
-            appointment_date: new Date($('#appointment_date').val() + ' ' + $('#appointment_time').val()).toISOString(),
-            notes: $('#notes').val()
-        };
-        
-        $.ajax({
-            url: '/api/appointments',
-            type: 'POST',
-            contentType: 'application/json',
-            data: JSON.stringify(formData),
-            success: function(response) {
-                showAlert('Appointment booked successfully! Check your email for confirmation.', 'success');
-                $('#bookingForm')[0].reset();
-                setTimeout(() => {
-                    window.location.href = '/';
-                }, 2000);
-            },
-            error: function(xhr) {
-                let message = 'Failed to book appointment. Please try again.';
-                if (xhr.responseJSON && xhr.responseJSON.error) {
-                    message = xhr.responseJSON.error;
-                }
-                showAlert(message, 'danger');
-            }
-        });
-    });
-
-    // ========================================================================
     // Contact Form
     // ========================================================================
     
