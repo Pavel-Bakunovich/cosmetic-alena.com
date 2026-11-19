@@ -245,6 +245,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: var(--transition);
     display: flex;
     align-items: stretch;
+    height: 12.5rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
 }
 
@@ -297,6 +298,10 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.3;
     margin: 0 0 0.3rem;
     color: var(--dark-text);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .service-tile-desc {
@@ -304,18 +309,23 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.4;
     color: #6c757d;
     margin: 0 0 0.6rem;
-    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .service-tile-footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 0.5rem;
+    margin-top: auto;
 }
 
 .service-tile-meta {
+    min-width: 0;
     display: flex;
     align-items: baseline;
     flex-wrap: wrap;
