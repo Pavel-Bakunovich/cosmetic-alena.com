@@ -7,7 +7,7 @@
 <section class="page-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 0;">
     <div class="container">
         <h1 class="display-4 mb-2" style="color: white;">Галерея</h1>
-        <p class="lead">Посмотрите преобразования красоты, которые мы создали</p>
+        <p class="lead">Результаты процедур — фото до и после</p>
     </div>
 </section>
 
@@ -15,54 +15,225 @@
 <section class="py-5">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 class="display-5 mb-2">Моя работа</h2>
-            <p class="lead text-muted">До и после преобразований и истории удовлетворения клиентов</p>
+            <h2 class="display-5 mb-2">Мои работы</h2>
+            <p class="lead text-muted">Реальные результаты моих клиентов. На каждом фото: слева или сверху — до процедуры, справа или снизу — после.</p>
         </div>
 
-        <div class="gallery-grid">
-            <!-- Gallery items will be displayed here -->
-            <div class="row">
-                {% for i in range(1, 13) %}
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="gallery-item">
-                        <div class="gallery-image">
-                            <i class="fas fa-image fa-5x text-secondary"></i>
-                        </div>
-                        <div class="gallery-overlay">
-                            <a href="#" class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#imageModal">
-                                <i class="fas fa-search-plus"></i> Просмотр
-                            </a>
-                        </div>
-                        <div class="gallery-caption">
-                            <h6>Преобразование #{{ i }}</h6>
-                            {% if i % 3 == 0 %}
-                            <p class="text-muted small">Макияж и укладка волос</p>
-                            {% elif i % 3 == 1 %}
-                            <p class="text-muted small">Средство для лица</p>
-                            {% else %}
-                            <p class="text-muted small">Полный макияж</p>
-                            {% endif %}
-                        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="gallery-item h-100">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal1">
+                        <img src="{{ url_for('static', filename='gallery/before-after1.JPG') }}" class="img-fluid w-100" style="aspect-ratio: 1 / 1; object-fit: cover;" alt="Кожа лба до и после процедуры" loading="lazy">
+                    </a>
+                    <div class="gallery-caption">
+                        <h6>Разглаживание кожи лба</h6>
+                        <p class="text-muted small mb-0">Горизонтальные морщины на лбу стали заметно менее выраженными, рельеф кожи — ровнее.</p>
                     </div>
                 </div>
-                {% endfor %}
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="gallery-item h-100">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal2">
+                        <img src="{{ url_for('static', filename='gallery/before-after2.JPG') }}" class="img-fluid w-100" style="aspect-ratio: 1 / 1; object-fit: cover;" alt="Лицо клиентки до и после процедуры" loading="lazy">
+                    </a>
+                    <div class="gallery-caption">
+                        <h6>Сияние и тонус кожи</h6>
+                        <p class="text-muted small mb-0">Кожа выглядит увлажнённой и отдохнувшей, морщины на лбу разгладились, овал лица — чётче.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="gallery-item h-100">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal3">
+                        <img src="{{ url_for('static', filename='gallery/before-after3.JPG') }}" class="img-fluid w-100" style="aspect-ratio: 1 / 1; object-fit: cover;" alt="Лицо клиентки в профиль до и после процедуры" loading="lazy">
+                    </a>
+                    <div class="gallery-caption">
+                        <h6>Освежение возрастной кожи</h6>
+                        <p class="text-muted small mb-0">Выровнялся тон, уменьшилась пигментация, кожа стала более упругой и свежей.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="gallery-item h-100">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal4">
+                        <img src="{{ url_for('static', filename='gallery/before-after4.JPG') }}" class="img-fluid w-100" style="aspect-ratio: 1 / 1; object-fit: cover;" alt="Лицо клиентки до и после процедуры" loading="lazy">
+                    </a>
+                    <div class="gallery-caption">
+                        <h6>Чистая и ровная кожа</h6>
+                        <p class="text-muted small mb-0">Поры очищены, кожа выглядит более гладкой и здоровой.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="gallery-item h-100">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal5">
+                        <img src="{{ url_for('static', filename='gallery/before-after5.jpeg') }}" class="img-fluid w-100" style="aspect-ratio: 1 / 1; object-fit: cover;" alt="Лицо клиентки анфас до и после процедуры" loading="lazy">
+                    </a>
+                    <div class="gallery-caption">
+                        <h6>Ровный тон лица</h6>
+                        <p class="text-muted small mb-0">Уменьшилась пигментация и жирный блеск, кожа стала матовой и свежей.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5 pt-4 mb-5">
+            <h2 class="display-5 mb-2">А это я</h2>
+            <p class="lead text-muted">Немного меня в работе.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="gallery-item h-100">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal6">
+                        <img src="{{ url_for('static', filename='gallery/me1.jpeg') }}" class="img-fluid w-100" style="aspect-ratio: 3 / 4; object-fit: cover;" alt="Косметолог с аппаратом в руке в своём кабинете" loading="lazy">
+                    </a>
+                    <div class="gallery-caption">
+                        <h6>Мой кабинет</h6>
+                        <p class="text-muted small mb-0">Здесь проходят процедуры — уютно, чисто и со всем необходимым оборудованием.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="gallery-item h-100">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal7">
+                        <img src="{{ url_for('static', filename='gallery/me2.JPG') }}" class="img-fluid w-100" style="aspect-ratio: 3 / 4; object-fit: cover;" alt="Косметолог проводит аппаратную процедуру для клиентки" loading="lazy">
+                    </a>
+                    <div class="gallery-caption">
+                        <h6>Во время процедуры</h6>
+                        <p class="text-muted small mb-0">Аппаратный уход за лицом — бережно и с вниманием к каждой детали.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="gallery-item h-100">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal8">
+                        <img src="{{ url_for('static', filename='gallery/me3.jpeg') }}" class="img-fluid w-100" style="aspect-ratio: 3 / 4; object-fit: cover;" alt="Косметолог изучает состав косметического средства" loading="lazy">
+                    </a>
+                    <div class="gallery-caption">
+                        <h6>Подбор косметики</h6>
+                        <p class="text-muted small mb-0">Внимательно изучаю составы, чтобы подобрать средства, подходящие именно вашей коже.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Image Modal -->
-<div class="modal fade" id="imageModal" tabindex="-1">
-    <div class="modal-dialog modal-lg">
+<!-- Image Modals -->
+<div class="modal fade" id="galleryModal1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Изображение из галереи</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                <h5 class="modal-title">Разглаживание кожи лба</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
             </div>
-            <div class="modal-body">
-                <div class="text-center">
-                    <i class="fas fa-image fa-10x text-secondary opacity-50"></i>
-                </div>
+            <div class="modal-body p-0">
+                <img src="{{ url_for('static', filename='gallery/before-after1.JPG') }}" class="img-fluid w-100" alt="Кожа лба до и после процедуры" loading="lazy">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="galleryModal2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Сияние и тонус кожи</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body p-0">
+                <img src="{{ url_for('static', filename='gallery/before-after2.JPG') }}" class="img-fluid w-100" alt="Лицо клиентки до и после процедуры" loading="lazy">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="galleryModal3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Освежение возрастной кожи</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body p-0">
+                <img src="{{ url_for('static', filename='gallery/before-after3.JPG') }}" class="img-fluid w-100" alt="Лицо клиентки в профиль до и после процедуры" loading="lazy">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="galleryModal4" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Чистая и ровная кожа</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body p-0">
+                <img src="{{ url_for('static', filename='gallery/before-after4.JPG') }}" class="img-fluid w-100" alt="Лицо клиентки до и после процедуры" loading="lazy">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="galleryModal5" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Ровный тон лица</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body p-0">
+                <img src="{{ url_for('static', filename='gallery/before-after5.jpeg') }}" class="img-fluid w-100" alt="Лицо клиентки анфас до и после процедуры" loading="lazy">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="galleryModal6" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Мой кабинет</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body p-0">
+                <img src="{{ url_for('static', filename='gallery/me1.jpeg') }}" class="img-fluid w-100" alt="Косметолог с аппаратом в руке в своём кабинете" loading="lazy">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="galleryModal7" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Во время процедуры</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body p-0">
+                <img src="{{ url_for('static', filename='gallery/me2.JPG') }}" class="img-fluid w-100" alt="Косметолог проводит аппаратную процедуру для клиентки" loading="lazy">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="galleryModal8" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Подбор косметики</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body p-0">
+                <img src="{{ url_for('static', filename='gallery/me3.jpeg') }}" class="img-fluid w-100" alt="Косметолог изучает состав косметического средства" loading="lazy">
             </div>
         </div>
     </div>
