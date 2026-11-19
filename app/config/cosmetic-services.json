@@ -6,7 +6,7 @@
     "price": 40.0,
     "duration": 25,
     "category": "БМС",
-    "image": "/static/services/bms.jpeg"
+    "image": "/static/services/bms_trial.jpeg"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "price": 65.0,
     "duration": 50,
     "category": "БМС",
-    "image": "/static/services/bms.jpeg"
+    "image": "/static/services/bms_one.JPG"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "price": 600.0,
     "duration": 500,
     "category": "БМС",
-    "image": "/static/services/bms.jpeg"
+    "image": "/static/services/bms_course.jpeg"
   },
   {
     "id": 4,
@@ -42,7 +42,7 @@
     "price": 90.0,
     "duration": 60,
     "category": "Чистка",
-    "image": "/static/services/chistka.jpg"
+    "image": "/static/services/mechanical_cleansing.PNG"
   },
   {
     "id": 6,
@@ -96,7 +96,7 @@
     "price": 45.0,
     "duration": 60,
     "category": "Маски",
-    "image": "/static/services/maska.jpg.webp"
+    "image": "/static/services/alginat.jpeg"
   },
   {
     "id": 12,
@@ -159,7 +159,7 @@
     "price": 60.0,
     "duration": 60,
     "category": "Маски",
-    "image": "/static/services/maska.jpg.webp"
+    "image": "/static/services/nanagaba-maska.JPG"
   },
   {
     "id": 19,
@@ -181,12 +181,12 @@
   },
   {
     "id": 21,
-    "name": "Массаж по Жаке",
-    "description": "Массаж лица и рук по методике Жаке с использованием специальных техник для улучшения контуров лица и рук.",
-    "price": 45.0,
+    "name": "Массаж Гуаша",
+    "description": "Массаж лица с Гуаша.",
+    "price": 60.0,
     "duration": 60,
     "category": "Массаж",
-    "image": "/static/services/massage.jpg"
+    "image": "/static/services/guasha.JPG"
   },
   {
     "id": 22,
@@ -221,8 +221,8 @@
     "description": "Водородный пилинг для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.",
     "price": 90.0,
     "duration": 60,
-    "category": "Пиллинги",
-    "image": "/static/services/pealing.jpg"
+    "category": "Пилинги",
+    "image": "/static/services/vodorod_piling.PNG"
   },
   {
     "id": 26,
@@ -230,7 +230,7 @@
     "description": "Кислородный пилинг для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.",
     "price": 90.0,
     "duration": 60,
-    "category": "Пиллинги",
+    "category": "Пилинги",
     "image": "/static/services/pealing.jpg"
   },
   {
@@ -239,7 +239,7 @@
     "description": "Миндально-феруловый пилинг с лактобионовой кислотой для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.",
     "price": 80.0,
     "duration": 60,
-    "category": "Пиллинги",
+    "category": "Пилинги",
     "image": "/static/services/pealing.jpg"
   },
   {
@@ -248,7 +248,7 @@
     "description": "Азелаиновый пилинг для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.",
     "price": 90.0,
     "duration": 60,
-    "category": "Пиллинги",
+    "category": "Пилинги",
     "image": "/static/services/pealing.jpg"
   },
   {
@@ -257,7 +257,7 @@
     "description": "Нейропилинг GABA&NANA для лица с увлажняющим и питательным эффектом. Подходит для всех типов кожи.",
     "price": 100.0,
     "duration": 60,
-    "category": "Пиллинги",
+    "category": "Пилинги",
     "image": "/static/services/pealing.jpg"
   },
   {
@@ -348,7 +348,7 @@
     "price": 150.0,
     "duration": 60,
     "category": "Комплексы",
-    "image": "/static/services/compleks.webp"
+    "image": "/static/services/nanagaba.jpeg"
   },
   {
     "id": 41,
