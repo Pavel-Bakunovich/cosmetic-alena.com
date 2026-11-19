@@ -33,7 +33,7 @@
     "price": 70.0,
     "duration": 60,
     "category": "Чистка",
-    "image": "/static/services/ultra-sound-cleansing.jpeg"
+    "image": "/static/services/ultra-sound-cleansing.PNG"
   },
   {
     "id": 5,

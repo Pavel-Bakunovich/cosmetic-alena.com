@@ -237,54 +237,107 @@ h1, h2, h3, h4, h5, h6 {
    Service Cards
    ============================================================================ */
 
-.service-card {
+.service-tile {
     background: white;
     border-radius: var(--border-radius);
     overflow: hidden;
     border: 1px solid #e9ecef;
     transition: var(--transition);
     display: flex;
-    flex-direction: column;
+    align-items: stretch;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
 }
 
-.service-card:hover {
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-    transform: translateY(-5px);
+.service-tile:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
     border-color: var(--primary-color);
 }
 
-.service-image {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-}
-
-.service-placeholder {
-    width: 100%;
-    height: 250px;
+.service-tile-media {
+    flex: 0 0 110px;
+    position: relative;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 3rem;
+    font-size: 1.75rem;
 }
 
-.service-content {
-    padding: 1.5rem;
-    flex-grow: 1;
+.service-tile-media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-tile-body {
+    padding: 0.75rem 0.9rem;
+    flex: 1 1 auto;
+    min-width: 0;
     display: flex;
     flex-direction: column;
 }
 
-.service-content h5 {
-    margin: 0.5rem 0;
-    color: var(--dark-text);
-    font-size: 1.2rem;
+.service-tile-category {
+    align-self: flex-start;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--primary-color);
+    margin-bottom: 0.15rem;
 }
 
-.service-content p {
+.service-tile-title {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0 0 0.3rem;
+    color: var(--dark-text);
+}
+
+.service-tile-desc {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #6c757d;
+    margin: 0 0 0.6rem;
     flex-grow: 1;
+}
+
+.service-tile-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.service-tile-meta {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.75rem;
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+.service-tile-meta .price-tag {
+    font-size: 1.1rem;
+}
+
+.service-tile-footer .btn {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+@media (max-width: 400px) {
+    .service-tile-media {
+        flex-basis: 84px;
+    }
 }
 
 .badge {
@@ -773,15 +826,6 @@ h1, h2, h3, h4, h5, h6 {
         width: 100%;
     }
 
-    .service-card {
-        min-height: 100%;
-    }
-
-    .service-image,
-    .service-placeholder {
-        height: 220px;
-    }
-
     .pricing-card.featured {
         transform: scale(1);
     }
@@ -858,10 +902,6 @@ h1, h2, h3, h4, h5, h6 {
         margin: 0 auto !important;
         max-width: 85%;
         height: auto;
-    }
-
-    .service-card {
-        margin-bottom: 1.5rem;
     }
 
     .btn-group {
