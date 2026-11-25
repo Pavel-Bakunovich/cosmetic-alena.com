@@ -3,12 +3,11 @@ Cosmetic Alena - Flask Static Website
 A professional cosmetics and beauty services website
 """
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 from datetime import datetime
 import json
 import os
 from dotenv import load_dotenv
-import logging
 
 # Load environment variables
 load_dotenv()
@@ -18,11 +17,6 @@ app = Flask(__name__,
             template_folder='app/templates',
             static_folder='app/static', 
             static_url_path='/static')
-
-# Keep ordinary asset, static-file and other HTTP requests out of the logs.
-# Log only meaningful page visits from the main page route below.
-logging.getLogger('werkzeug').setLevel(logging.WARNING)
-app.logger.setLevel(logging.INFO)
 
 services_path = os.path.join(
     os.path.dirname(__file__), 'app', 'config', 'cosmetic-services.json'
@@ -41,11 +35,6 @@ with open(certificates_path, encoding='utf-8') as certificates_file:
 def index():
     """Home page"""
     featured_services = SERVICES[:6]
-    app.logger.info(
-        "MAIN_PAGE_VISIT ip=%s user_agent=%s",
-        request.headers.get('X-Forwarded-For', request.remote_addr),
-        request.headers.get('User-Agent', 'unknown'),
-    )
     return render_template('index.html', featured_services=featured_services)
 
 @app.route('/services')
