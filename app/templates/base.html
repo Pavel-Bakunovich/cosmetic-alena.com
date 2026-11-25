@@ -129,6 +129,10 @@
     
     {% block extra_js %}{% endblock %}
 
-    <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ac93b26713f14a6ea8ff1013ca638f01"}'></script><!-- End Cloudflare Web Analytics -->
+    {% if request.host.split(':', 1)[0] in ['cosmetic-alena.com', 'www.cosmetic-alena.com'] %}
+    <!-- Cloudflare Web Analytics -->
+    <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ac93b26713f14a6ea8ff1013ca638f01"}'></script>
+    <!-- End Cloudflare Web Analytics -->
+    {% endif %}
 </body>
 </html>
