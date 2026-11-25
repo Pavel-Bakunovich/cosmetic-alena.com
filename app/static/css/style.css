@@ -143,6 +143,24 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0.95;
 }
 
+.hero-section .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas: "copy portrait";
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    column-gap: 2rem;
+}
+
+.hero-section .hero-copy {
+    grid-area: copy;
+}
+
+.hero-section .hero-portrait {
+    grid-area: portrait;
+}
+
 .hero-image {
     position: relative;
     max-width: 80%;
@@ -815,8 +833,46 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1rem;
     }
 
+    .hero-section .hero-grid {
+        grid-template-columns: minmax(0, 38fr) minmax(0, 62fr);
+        grid-template-areas:
+            "portrait title"
+            "intro intro";
+        column-gap: 1rem;
+        row-gap: 1.5rem;
+    }
+
+    .hero-section .hero-copy {
+        display: contents;
+    }
+
+    .hero-section .hero-title {
+        grid-area: title;
+        margin-bottom: 0 !important;
+    }
+
+    .hero-section .hero-copy .lead {
+        grid-area: intro;
+        margin-bottom: 0 !important;
+        padding: 0 0.75rem;
+    }
+
     .hero-section .hero-image {
-        min-height: 260px;
+        min-height: 0;
+        max-width: 100%;
+        width: 100%;
+        aspect-ratio: 1;
+    }
+
+    .hero-section .hero-image img {
+        position: static !important;
+        transform: none !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+        box-shadow: 0 8px 24px rgba(34, 24, 76, 0.25);
+        border: 3px solid rgba(255, 255, 255, 0.85);
     }
 
     .btn-group-custom {
@@ -885,63 +941,19 @@ h1, h2, h3, h4, h5, h6 {
         padding: 40px 0 !important;
     }
 
-    .hero-section .row {
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .hero-section .hero-copy {
-        order: 2;
-        flex: 0 0 62%;
-        max-width: 62%;
-    }
-
-    .hero-section .hero-portrait {
-        order: 1;
-        flex: 0 0 38%;
-        max-width: 38%;
-    }
-
     .hero-section .display-4 {
         font-size: 1.9rem;
         line-height: 1.15;
-        margin-bottom: 0.75rem !important;
     }
 
     .hero-section .lead {
-        font-size: 1.2 rem;
+        font-size: 1.2rem;
         line-height: 1.55;
         margin-bottom: 0 !important;
     }
 
-    .hero-section .hero-image {
-        min-height: 0;
-        max-width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        width: 100%;
-        margin: 0 auto;
-        aspect-ratio: 1;
-    }
-
     .hero-section .hero-image i.fa-crown {
         display: none;
-    }
-
-    .hero-section .hero-image img {
-        position: static !important;
-        transform: none !important;
-        top: auto !important;
-        left: auto !important;
-        right: auto !important;
-        max-width: 100% !important;
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover;
-        box-shadow: 0 8px 24px rgba(34, 24, 76, 0.25);
-        border: 3px solid rgba(255, 255, 255, 0.85);
     }
 
     .btn-group {
